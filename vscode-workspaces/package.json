@@ -1,0 +1,62 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "vscode-workspaces",
+  "title": "VS Code Workspaces",
+  "description": "Search and open VS Code .code-workspace files from a folder",
+  "icon": "extension-icon.png",
+  "author": "bear",
+  "categories": [
+    "Developer Tools"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "open-workspace",
+      "title": "Open Code Workspace",
+      "subtitle": "VS Code",
+      "description": "List .code-workspace files and open the selected one in VS Code",
+      "mode": "view",
+      "keywords": [
+        "code",
+        "vscode",
+        "workspace"
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "workspaceDir",
+      "title": "Workspace Folder",
+      "description": "Folder that contains your .code-workspace files",
+      "type": "directory",
+      "required": false,
+      "default": "~/Documents/vscode-workspace"
+    },
+    {
+      "name": "editor",
+      "title": "Editor",
+      "description": "App used to open the workspace (VS Code by default)",
+      "type": "appPicker",
+      "required": false,
+      "default": "com.microsoft.VSCode"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.12.0",
+    "@raycast/utils": "^2.3.3"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "eslint": "^10.14.0",
+    "prettier": "^3.10.1",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint"
+  }
+}
